@@ -60,4 +60,21 @@ func main() {
 	numbers2 := []int{10, 20, 30, 40}
 	numbers2 = append(numbers2, 50)
 	fmt.Println(numbers2)
+
+	//created a map variable and iterating over it
+	capitals := map[string]string{
+		"France": "Paris",
+		"Japan":  "Tokyo",
+	}
+
+	capitals["Germany"] = "Berlin"
+	capitals["Russia"] = "Moscow"
+
+	fmt.Println(capitals)
+
+	delete(capitals, "France")
+
+	for country, city := range capitals {
+		fmt.Printf("%s: %s\n", country, city)
+	}
 }
