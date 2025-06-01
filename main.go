@@ -10,6 +10,10 @@ import (
 	"fmt"
 )
 
+func greet(name string) string {
+	return "Hello, " + name + "!"
+}
+
 func main() {
 	fmt.Println("Hello, World!")
 
@@ -30,4 +34,30 @@ func main() {
 	} else {
 		fmt.Println(name, "is not an adult.")
 	}
+
+	for i := 0; i < 5; i++ {
+		fmt.Println("Iteration:", i)
+	}
+
+	//while-like loop
+	j := 0
+	for j < 3 {
+		fmt.Println("j is", j)
+		j++
+	}
+
+	message := greet("Alice")
+	fmt.Println(message)
+
+	//fixed size array
+	var numbers [3]int
+	numbers[0] = 1
+	numbers[1] = 2
+	numbers[2] = 3
+	fmt.Println(numbers)
+
+	//slices (flexible, dynamic arrays)
+	numbers2 := []int{10, 20, 30, 40}
+	numbers2 = append(numbers2, 50)
+	fmt.Println(numbers2)
 }
