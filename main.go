@@ -10,8 +10,17 @@ import (
 	"fmt"
 )
 
+type Person struct {
+	Name string
+	Age  int
+}
+
 func greet(name string) string {
 	return "Hello, " + name + "!"
+}
+
+func (p Person) Greet2() {
+	fmt.Printf("Hi, I'm %s and I'm %d years old.\n", p.Name, p.Age)
 }
 
 func main() {
@@ -77,4 +86,27 @@ func main() {
 	for country, city := range capitals {
 		fmt.Printf("%s: %s\n", country, city)
 	}
+
+	var numbers3 [5]int // an array of 5 integers
+
+	//initialize
+	numbers3 = [5]int{1, 2, 3, 4, 5}
+	fmt.Println(numbers3[2])
+
+	//declare and initialize a slice:
+	numbers4 := []int{1, 2, 3}
+
+	//append to a slice:
+	numbers4 = append(numbers4, 4, 5)
+
+	//iterate over a slice:
+	for i, val := range numbers4 {
+		fmt.Printf("Index %d: %d\n", i, val)
+	}
+
+	p := Person{Name: "Alice", Age: 30}
+	fmt.Println(p.Name, "is", p.Age, "years old.")
+
+	p.Greet2()
+
 }
